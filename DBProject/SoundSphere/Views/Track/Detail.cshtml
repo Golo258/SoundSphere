@@ -1,0 +1,36 @@
+<html lang="en">
+@using SoundSphere.Models
+@model MusicTrack
+
+<body>
+
+    <main class="container">
+        <section class="tab-content">
+
+
+            <div class="tab-pane active" id="project1" role="tabpanel" aria-labelledby="project1-tab">
+                <h1 class="my-4">Representation of Track</h1>
+                <div class="row">
+                    <div class="col-md-8">
+                        <img alt="Image" src="@Model.Image" class="rounded img-fluid" />
+                    </div>
+                    <div class="col-md-4">
+                        <h3 class="my-3">@Model.Title</h3>
+
+                        @Model.Artist
+
+                        <h3 class="my-3">Location</h3>
+                        <ul>
+                            <li>ReleaseYear: @Model.ReleaseYear</li>
+                            <li>Genre: @Model.Genre</li>
+                            <li>Comment: @Model.Rating.Comment</li>
+                            <li>Points: @Model.Rating.Points</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
