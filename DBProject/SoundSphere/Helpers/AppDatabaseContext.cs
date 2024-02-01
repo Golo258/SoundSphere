@@ -9,7 +9,7 @@ public class AppDatabaseContext : IdentityDbContext<AppUser>
 {
     public AppDatabaseContext(DbContextOptions<AppDatabaseContext> options) : base(options)
     {
-
+        Database.Migrate();
     }
     public DbSet<MusicTrack> Tracks { get; set; }
     public DbSet<MusicConcert> Concerts { get; set; }

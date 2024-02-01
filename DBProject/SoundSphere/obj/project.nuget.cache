@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ayalSZQwn1ISj+kz0f8xJfyEnH663RjGcrrQjc+52O/nZ78DDIvt78ak2J0yoAVUDpRHwd+OovybtSFSOoT9gA==",
+  "dgSpecHash": "AhB79FD1fvnws2oK6F3foYZPHvyPkXbXlNV9oD9ZcN+DmWNPvkLoZ/IhHyogPDQsAxKguZ6z7CdaXaBaVJj82w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Czesław\\Desktop\\Repos\\Repositories\\DBProject\\SoundSphere\\SoundSphere.csproj",
+  "projectFilePath": "C:\\Users\\Czesław\\Desktop\\Repos\\Repositories\\SoundSphere\\DBProject\\SoundSphere\\SoundSphere.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Czesław\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\Czesław\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

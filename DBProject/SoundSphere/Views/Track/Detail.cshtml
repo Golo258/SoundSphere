@@ -15,16 +15,14 @@
                         <img alt="Image" src="@Model.Image" class="rounded img-fluid" />
                     </div>
                     <div class="col-md-4">
-                        <h3 class="my-3">@Model.Title</h3>
+                        <h3 class="my-3">Track title: @Model.Title</h3>
 
-                        @Model.Artist
-
-                        <h3 class="my-3">Location</h3>
+                        Track Author: @Model.Artist
                         <ul>
-                            <li>ReleaseYear: @Model.ReleaseYear</li>
+                            <li>Track release year: @Model.ReleaseYear</li>
                             <li>Genre: @Model.Genre</li>
-                            <li>Comment: @Model.Rating.Comment</li>
-                            <li>Points: @Model.Rating.Points</li>
+                            <li>Rating comment: @Model.Rating.Comment</li>
+                            <li>Rating points: @Model.Rating.Points</li>
                         </ul>
                     </div>
                 </div>

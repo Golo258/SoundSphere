@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Czesław\\Desktop\\Repos\\Repositories\\DBProject\\SoundSphere\\SoundSphere.csproj": {}
+    "C:\\Users\\Czesław\\Desktop\\Repos\\Repositories\\SoundSphere\\DBProject\\SoundSphere\\SoundSphere.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Czesław\\Desktop\\Repos\\Repositories\\DBProject\\SoundSphere\\SoundSphere.csproj": {
+    "C:\\Users\\Czesław\\Desktop\\Repos\\Repositories\\SoundSphere\\DBProject\\SoundSphere\\SoundSphere.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Czesław\\Desktop\\Repos\\Repositories\\DBProject\\SoundSphere\\SoundSphere.csproj",
+        "projectUniqueName": "C:\\Users\\Czesław\\Desktop\\Repos\\Repositories\\SoundSphere\\DBProject\\SoundSphere\\SoundSphere.csproj",
         "projectName": "SoundSphere",
-        "projectPath": "C:\\Users\\Czesław\\Desktop\\Repos\\Repositories\\DBProject\\SoundSphere\\SoundSphere.csproj",
+        "projectPath": "C:\\Users\\Czesław\\Desktop\\Repos\\Repositories\\SoundSphere\\DBProject\\SoundSphere\\SoundSphere.csproj",
         "packagesPath": "C:\\Users\\Czesław\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Czesław\\Desktop\\Repos\\Repositories\\DBProject\\SoundSphere\\obj\\",
+        "outputPath": "C:\\Users\\Czesław\\Desktop\\Repos\\Repositories\\SoundSphere\\DBProject\\SoundSphere\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Czesław\\AppData\\Roaming\\NuGet\\NuGet.Config"

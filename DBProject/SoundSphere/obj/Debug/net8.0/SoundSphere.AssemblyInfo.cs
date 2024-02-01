@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SoundSphere")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+28fc2ab984caee07bb6726742fd8d41af32eb7e8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8e5fe9f151c54e3b259363e684e71eff07ef7f95")]
 [assembly: System.Reflection.AssemblyProductAttribute("SoundSphere")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SoundSphere")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

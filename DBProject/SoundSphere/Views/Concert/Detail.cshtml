@@ -15,16 +15,15 @@
                         <img alt="Image" src="@Model.Image" class="rounded img-fluid" />
                     </div>
                     <div class="col-md-4">
-                        <h3 class="my-3">@Model.Name</h3>
+                        <h3 class="my-3">Concert name: @Model.Name</h3>
 
-                        @Model.Description
+                        <h5>Description:  @Model.Description  </h5>
 
-                        <h3 class="my-3">Location</h3>
                         <ul>
-                            <li>Artist: @Model.Artist</li>
-                            <li>Venue: @Model.Venue</li>
-                            <li>Comment: @Model.Rating.Comment</li>
-                            <li>Points: @Model.Rating.Points</li>
+                            <li>Concert artists: : @Model.Artist</li>
+                            <li>Concert venue: @Model.Venue</li>
+                            <li>Rating comment: @Model.Rating.Comment</li>
+                            <li>Rating points: @Model.Rating.Points</li>
                         </ul>
                     </div>
                 </div>

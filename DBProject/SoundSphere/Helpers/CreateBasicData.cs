@@ -19,11 +19,11 @@ namespace SoundSphere.Helpers
                     {
                         new MusicTrack()
                         {
-                            Title = "Running Track 1",
-                            Image = "https://www.eatthis.com/wp-content/uploads/sites/4/2020/05/running.jpg?quality=82&strip=1&resize=640%2C360",
-                            Artist = "Bracia Golec",
-                            Genre = "Nic sie nie boją",
-                            ReleaseYear = 2005,
+                            Title = "Another Love",
+                            Image = "https://i1.sndcdn.com/artworks-000318994221-eyr8x0-t500x500.jpg",
+                            Artist = "Tom Odell",
+                            Genre = "Pop",
+                            ReleaseYear = 2020,
                             Rating = new Rating
                             {
                                 Comment = "Super fajny komentarz",
@@ -33,7 +33,7 @@ namespace SoundSphere.Helpers
                         new MusicTrack
                         {
                                 Title = "Bohemian Rhapsody",
-                                Image = "https://i.imgur.com/abc123.jpg",
+                                Image = "https://m.media-amazon.com/images/I/91teSKZjy8L._UF894,1000_QL80_.jpg",
                                 Artist = "Queen",
                                 Genre = "Rock",
                                 ReleaseYear = 1975,
@@ -46,7 +46,7 @@ namespace SoundSphere.Helpers
                         new MusicTrack()
                         {
                             Title = "Shape of You",
-                            Image = "https://i.imgur.com/xyz456.jpg",
+                            Image = "https://i1.sndcdn.com/artworks-hHRNAPyoL1gTPNV7-mUwz9A-t500x500.jpg",
                             Artist = "Ed Sheeran",
                             Genre = "Pop",
                             ReleaseYear = 2017,
@@ -59,7 +59,7 @@ namespace SoundSphere.Helpers
                         new MusicTrack()
                         {
                             Title = "Imagine",
-                            Image = "https://i.imgur.com/ijk789.jpg",
+                            Image = "https://cdns-images.dzcdn.net/images/cover/ee5e3e4d92b6014ea4edc9b91a1dfeb4/500x500.jpg",
                             Artist = "John Lennon",
                             Genre = "Soft Rock",
                             ReleaseYear = 1971,
@@ -81,7 +81,7 @@ namespace SoundSphere.Helpers
                             Name = "Live Aid",
                             Artist = "Various Artists",
                             Venue = "Wembley Stadium, London",
-                            Image = "https://i.imgur.com/concert1.jpg",
+                            Image = "https://i.ytimg.com/vi/Gifrd7ljNL4/maxresdefault.jpg",
                             Description = "Historic charity concert featuring multiple artists.",
                             Rating = new Rating
                             {
@@ -94,7 +94,7 @@ namespace SoundSphere.Helpers
                             Name = "Coachella",
                             Artist = "Various Artists",
                             Venue = "Empire Polo Club, Indio",
-                            Image = "https://i.imgur.com/concert2.jpg",
+                            Image = "https://images.squarespace-cdn.com/content/v1/5fde373733a5e91dcac22e9b/1688186237015-JFAGZMBEU9IDOH45S5FL/Coachella-first-time-guide-1_edit_hero.jpg",
                             Description = "Annual music and arts festival.",
                             Rating = new Rating
                             {
@@ -107,7 +107,7 @@ namespace SoundSphere.Helpers
                             Name = "Woodstock Festival",
                             Artist = "Various Artists",
                             Venue = "Bethel, New York",
-                            Image = "https://i.imgur.com/concert3.jpg",
+                            Image = "https://d-art.ppstatic.pl/kadry/k/r/1/fb/14/56094ffd960bc_o_full.jpg",
                             Description = "Iconic festival of the 1960s.",
                             Rating = new Rating
                             {
@@ -120,7 +120,7 @@ namespace SoundSphere.Helpers
                             Name = "Glastonbury Festival",
                             Artist = "Various Artists",
                             Venue = "Worthy Farm, Pilton",
-                            Image = "https://i.imgur.com/concert4.jpg",
+                            Image = "https://muno.pl/wp-content/uploads/2021/04/Fot.-Andrew-Allcock-960x500.jpg",
                             Description = "One of the largest greenfield festivals in the world.",
                             Rating = new Rating
                             {
@@ -132,6 +132,7 @@ namespace SoundSphere.Helpers
                     context.SaveChanges();
                 }
             }
+                Task.Run(() => CreateBasicDataForUsersAndRolesAsync(applicationBuilder)).Wait();
         }
 
         public static async Task CreateBasicDataForUsersAndRolesAsync(IApplicationBuilder applicationBuilder)
@@ -148,7 +149,7 @@ namespace SoundSphere.Helpers
 
                 //Users
                 var userManager = serviceScope.ServiceProvider.GetRequiredService<UserManager<AppUser>>();
-                string adminUserEmail = "grzesiuniunia123@gmail.com";
+                string adminUserEmail = "golonka52@gmail.com";
 
                 var adminUser = await userManager.FindByEmailAsync(adminUserEmail);
                 if (adminUser == null)
@@ -164,7 +165,7 @@ namespace SoundSphere.Helpers
                             Points = 1000
                         }
                     };
-                    await userManager.CreateAsync(newAdminUser, "#123ABCgolo52");
+                    await userManager.CreateAsync(newAdminUser, "#123ABCgolonka");
                     await userManager.AddToRoleAsync(newAdminUser, UserRoles.Admin);
                 }
 
@@ -184,7 +185,7 @@ namespace SoundSphere.Helpers
                             Points = 1000
                         }
                     };
-                    await userManager.CreateAsync(newAppUser, "#superFajneHaslo123");
+                    await userManager.CreateAsync(newAppUser, "#basicPASSWORD123");
                     await userManager.AddToRoleAsync(newAppUser, UserRoles.User);
                 }
 
@@ -203,7 +204,7 @@ namespace SoundSphere.Helpers
                             Points = 1500
                         }
                     };
-                    await userManager.CreateAsync(newAdminUser2, "#AdminPass123");
+                    await userManager.CreateAsync(newAdminUser2, "#AdminPassword123");
                     await userManager.AddToRoleAsync(newAdminUser2, UserRoles.Admin);
                 }
 
@@ -223,11 +224,11 @@ namespace SoundSphere.Helpers
                             Points = 900
                         }
                     };
-                    await userManager.CreateAsync(newAppUser2, "#UserPass456");
+                    await userManager.CreateAsync(newAppUser2, "#UserPassword456");
                     await userManager.AddToRoleAsync(newAppUser2, UserRoles.User);
                 }
             }
         }
     }
-
+    
 }
