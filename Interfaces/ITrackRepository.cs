@@ -3,9 +3,7 @@ using SoundSphere.Models;
 
 namespace SoundSphere.Interfaces;
 
-public interface ITrackRepository
-{
-
+public interface ITrackRepository {
     Task<IEnumerable<MusicTrack>> GetAllTracks();
     Task<MusicTrack> GetTrackById(int id);
     Task<MusicTrack> GetTrackByIdAsyncNoTracking(int id);

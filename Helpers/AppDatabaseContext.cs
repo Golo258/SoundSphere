@@ -5,10 +5,9 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using SoundSphere.Models;
 
-public class AppDatabaseContext : IdentityDbContext<AppUser>
-{
-    public AppDatabaseContext(DbContextOptions<AppDatabaseContext> options) : base(options)
-    {
+public class AppDatabaseContext : IdentityDbContext<AppUser> {
+    public AppDatabaseContext(DbContextOptions<AppDatabaseContext> options) 
+        : base(options) {
         Database.Migrate();
     }
     public DbSet<MusicTrack> Tracks { get; set; }

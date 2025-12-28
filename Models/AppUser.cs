@@ -3,9 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SoundSphere.Models;
 using Microsoft.AspNetCore.Identity;
-public class AppUser : IdentityUser
-{
-
+public class AppUser : IdentityUser {
     [ForeignKey("Rating")]
     public int? RatingId { get; set; }
     public Rating? Rating { get; set; }

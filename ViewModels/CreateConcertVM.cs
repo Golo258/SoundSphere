@@ -4,8 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SoundSphere.Models;
 
-public class CreateConcertVM
-{
+public class CreateConcertVM {
     public int Id { get; set; }
     public string Name { get; set; }
     public string Artist { get; set; }
@@ -16,5 +15,4 @@ public class CreateConcertVM
     public int RatingId { get; set; }
     public Rating? Rating { get; set; }
     public string? AppUserId { get; set; }
-
 }

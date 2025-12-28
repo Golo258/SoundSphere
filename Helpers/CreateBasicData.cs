@@ -1,24 +1,17 @@
 using Microsoft.AspNetCore.Identity;
 using SoundSphere.Models;
 
-namespace SoundSphere.Helpers
-{
-    public class CreateBasicData
-    {
-        public static void SeedData(IApplicationBuilder applicationBuilder)
-        {
-            using (var serviceScope = applicationBuilder.ApplicationServices.CreateScope())
-            {
+namespace SoundSphere.Helpers {
+    public class CreateBasicData {
+        public static void SeedData(IApplicationBuilder applicationBuilder) {
+            using (var serviceScope = applicationBuilder.ApplicationServices.CreateScope()) {
                 var context = serviceScope.ServiceProvider.GetService<AppDatabaseContext>();
-
                 context.Database.EnsureCreated();
 
-                if (!context.Tracks.Any())
-                {
-                    context.Tracks.AddRange(new List<MusicTrack>()
-                    {
-                        new MusicTrack()
-                        {
+                if (!context.Tracks.Any()) {
+                    context.Tracks.AddRange(
+                        new List<MusicTrack>(){
+                        new MusicTrack() {
                             Title = "Another Love",
                             Image = "https://i1.sndcdn.com/artworks-000318994221-eyr8x0-t500x500.jpg",
                             Artist = "Tom Odell",
@@ -29,22 +22,20 @@ namespace SoundSphere.Helpers
                                 Comment = "Super fajny komentarz",
                                 Points = 12,
                             }
-                         },
-                        new MusicTrack
-                        {
-                                Title = "Bohemian Rhapsody",
-                                Image = "https://m.media-amazon.com/images/I/91teSKZjy8L._UF894,1000_QL80_.jpg",
-                                Artist = "Queen",
-                                Genre = "Rock",
-                                ReleaseYear = 1975,
-                                Rating = new Rating
-                                {
-                                    Comment = "Epic song!",
-                                    Points = 5
-                                }
                         },
-                        new MusicTrack()
-                        {
+                        new MusicTrack {
+                            Title = "Bohemian Rhapsody",
+                            Image = "https://m.media-amazon.com/images/I/91teSKZjy8L._UF894,1000_QL80_.jpg",
+                            Artist = "Queen",
+                            Genre = "Rock",
+                            ReleaseYear = 1975,
+                            Rating = new Rating
+                            {
+                                Comment = "Epic song!",
+                                Points = 5
+                            }
+                        },
+                        new MusicTrack() {
                             Title = "Shape of You",
                             Image = "https://i1.sndcdn.com/artworks-hHRNAPyoL1gTPNV7-mUwz9A-t500x500.jpg",
                             Artist = "Ed Sheeran",
@@ -56,8 +47,7 @@ namespace SoundSphere.Helpers
                                 Points = 4
                             }
                         },
-                        new MusicTrack()
-                        {
+                        new MusicTrack() {
                             Title = "Imagine",
                             Image = "https://cdns-images.dzcdn.net/images/cover/ee5e3e4d92b6014ea4edc9b91a1dfeb4/500x500.jpg",
                             Artist = "John Lennon",
@@ -72,12 +62,9 @@ namespace SoundSphere.Helpers
                     });
                     context.SaveChanges();
                 }
-                if (!context.Concerts.Any())
-                {
-                    context.Concerts.AddRange(new List<MusicConcert>()
-                    {
-                        new MusicConcert()
-                        {
+                if (!context.Concerts.Any()) {
+                    context.Concerts.AddRange(new List<MusicConcert>() {
+                        new MusicConcert() {
                             Name = "Live Aid",
                             Artist = "Various Artists",
                             Venue = "Wembley Stadium, London",
@@ -89,8 +76,7 @@ namespace SoundSphere.Helpers
                                 Points = 5
                             }
                         },
-                        new MusicConcert()
-                        {
+                        new MusicConcert() {
                             Name = "Coachella",
                             Artist = "Various Artists",
                             Venue = "Empire Polo Club, Indio",
@@ -102,8 +88,7 @@ namespace SoundSphere.Helpers
                                 Points = 4
                             }
                         },
-                         new MusicConcert()
-                        {
+                        new MusicConcert() {
                             Name = "Woodstock Festival",
                             Artist = "Various Artists",
                             Venue = "Bethel, New York",
@@ -115,8 +100,7 @@ namespace SoundSphere.Helpers
                                 Points = 5
                             }
                         },
-                         new MusicConcert()
-                        {
+                        new MusicConcert() {
                             Name = "Glastonbury Festival",
                             Artist = "Various Artists",
                             Venue = "Worthy Farm, Pilton",
@@ -132,35 +116,40 @@ namespace SoundSphere.Helpers
                     context.SaveChanges();
                 }
             }
-                Task.Run(() => CreateBasicDataForUsersAndRolesAsync(applicationBuilder)).Wait();
+            Task.Run(() => CreateBasicDataForUsersAndRolesAsync(applicationBuilder)).Wait();
         }
 
-        public static async Task CreateBasicDataForUsersAndRolesAsync(IApplicationBuilder applicationBuilder)
-        {
-            using (var serviceScope = applicationBuilder.ApplicationServices.CreateScope())
-            {
+        public static async Task CreateBasicDataForUsersAndRolesAsync(
+            IApplicationBuilder applicationBuilder
+        ) {
+            using (var serviceScope = applicationBuilder.ApplicationServices.CreateScope()) {
                 //Roles
-                var roleManager = serviceScope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+                var roleManager = serviceScope
+                    .ServiceProvider
+                    .GetRequiredService<RoleManager<IdentityRole>>();
 
                 if (!await roleManager.RoleExistsAsync(UserRoles.Admin))
-                    await roleManager.CreateAsync(new IdentityRole(UserRoles.Admin));
+                    await roleManager.CreateAsync(
+                        new IdentityRole(UserRoles.Admin)
+                    );
+
                 if (!await roleManager.RoleExistsAsync(UserRoles.User))
-                    await roleManager.CreateAsync(new IdentityRole(UserRoles.User));
+                    await roleManager.CreateAsync(
+                        new IdentityRole(UserRoles.User)
+                    );
 
                 //Users
-                var userManager = serviceScope.ServiceProvider.GetRequiredService<UserManager<AppUser>>();
+                var userManager = serviceScope
+                    .ServiceProvider
+                    .GetRequiredService<UserManager<AppUser>>();
                 string adminUserEmail = "golonka52@gmail.com";
-
                 var adminUser = await userManager.FindByEmailAsync(adminUserEmail);
-                if (adminUser == null)
-                {
-                    var newAdminUser = new AppUser()
-                    {
+                if (adminUser == null) {
+                    var newAdminUser = new AppUser() {
                         UserName = "teddysmithdev",
                         Email = adminUserEmail,
                         EmailConfirmed = true,
-                        Rating = new Rating()
-                        {
+                        Rating = new Rating() {
                             Comment = "Super User. Super Powers!",
                             Points = 1000
                         }
@@ -170,17 +159,13 @@ namespace SoundSphere.Helpers
                 }
 
                 string appUserEmail = "user1@gmail.com";
-
                 var appUser = await userManager.FindByEmailAsync(appUserEmail);
-                if (appUser == null)
-                {
-                    var newAppUser = new AppUser()
-                    {
+                if (appUser == null) {
+                    var newAppUser = new AppUser() {
                         UserName = "app-user",
                         Email = appUserEmail,
                         EmailConfirmed = true,
-                        Rating = new Rating()
-                        {
+                        Rating = new Rating() {
                             Comment = "Normal User. Normal Powers!",
                             Points = 1000
                         }
@@ -191,15 +176,12 @@ namespace SoundSphere.Helpers
 
                 string adminUserEmail2 = "admin2@gmail.com";
                 var adminUser2 = await userManager.FindByEmailAsync(adminUserEmail2);
-                if (adminUser2 == null)
-                {
-                    var newAdminUser2 = new AppUser()
-                    {
+                if (adminUser2 == null) {
+                    var newAdminUser2 = new AppUser() {
                         UserName = "admin-user2",
                         Email = adminUserEmail2,
                         EmailConfirmed = true,
-                        Rating = new Rating()
-                        {
+                        Rating = new Rating() {
                             Comment = "Another Super User. More Super Powers!",
                             Points = 1500
                         }
@@ -211,10 +193,8 @@ namespace SoundSphere.Helpers
                 string appUserEmail2 = "user2@gmail.com";
 
                 var appUser2 = await userManager.FindByEmailAsync(appUserEmail2);
-                if (appUser2 == null)
-                {
-                    var newAppUser2 = new AppUser()
-                    {
+                if (appUser2 == null) {
+                    var newAppUser2 = new AppUser() {
                         UserName = "app-user2",
                         Email = appUserEmail2,
                         EmailConfirmed = true,
@@ -230,5 +210,4 @@ namespace SoundSphere.Helpers
             }
         }
     }
-    
 }

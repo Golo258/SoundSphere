@@ -3,14 +3,12 @@ using System.ComponentModel.DataAnnotations;
 
 namespace SoundSphere.ViewModels;
 
-public class AppLoginVM
-{
-
+public class AppLoginVM {
     [Display(Name = "Email Address")]
     [Required(ErrorMessage = "Email address is required ")]
-    public string EmailAddress { get; set; }
+        public string EmailAddress { get; set; }
 
     [Required]
     [DataType(DataType.Password)]
-    public string Password { get; set; }
+        public string Password { get; set; }
 }

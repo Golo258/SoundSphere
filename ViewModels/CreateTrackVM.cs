@@ -5,8 +5,7 @@ using SoundSphere.Models;
 
 namespace SoundSphere.ViewModels;
 
-public class CreateTrackVM
-{
+public class CreateTrackVM {
     public int Id { get; set; }
     public string Title { get; set; }
     public string Artist { get; set; }
@@ -17,5 +16,4 @@ public class CreateTrackVM
     public int RatingId { get; set; }
     public Rating? Rating { get; set; }
     public string? AppUserId { get; set; }
-
 }
