@@ -1,0 +1,44 @@
+@using SoundSphere.ViewModels
+@model EditConcertVM
+
+
+<form method="post" asp-action="Edit" enctype="multipart/form-data">
+    <input type="hidden" value="RatingId" id="RatingId" />
+    <div class="form-group">
+        <label asp-for="Name">Name</label>
+        <input asp-for="Name" class="form-control" placeholder="Name">
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Artist">Artist</label>
+        <input asp-for="Artist" class="form-control" placeholder="Artist">
+        <span asp-validation-for="Artist" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Venue">Venue</label>
+        <input asp-for="Venue" class="form-control" placeholder="Venue">
+        <span asp-validation-for="Venue" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Description">Description</label>
+        <input asp-for="Description" class="form-control" placeholder="Description">
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Rating.Comment">Comment</label>
+        <input asp-for="Rating.Comment" class="form-control" placeholder="Comment">
+        <span asp-validation-for="Rating.Comment" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Rating.Points">Points</label>
+        <input asp-for="Rating.Points" class="form-control" placeholder="Points">
+        <span asp-validation-for="Rating.Comment" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Image">Image</label>
+        <input asp-for="Image" type="file" class="form-control" placeholder="Image">
+        <span asp-validation-for="Image" class="text-danger"></span>
+
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
